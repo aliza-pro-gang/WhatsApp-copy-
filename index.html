@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ChatWave - WhatsApp Style UI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">ChatWave</div>
+      <div class="top-actions">
+        <button id="searchBtn" aria-label="Search">⌕</button>
+        <button id="menuBtn" aria-label="Menu">⋮</button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="chats" class="page active">
+        <div class="searchbox"><input id="chatSearch" placeholder="Search chats"></div>
+        <div id="chatList" class="list"></div>
+      </section>
+
+      <section id="status" class="page">
+        <div class="section-title">Status</div>
+        <div class="status-card">
+          <div class="avatar me">+</div>
+          <div><b>My status</b><small>Tap to add status update</small></div>
+        </div>
+        <h4>Recent updates</h4>
+        <div class="status-card"><div class="avatar">A</div><div><b>Alex</b><small>Today, 10:25 AM</small></div></div>
+        <div class="status-card"><div class="avatar">S</div><div><b>Sam</b><small>Today, 9:10 AM</small></div></div>
+      </section>
+
+      <section id="calls" class="page">
+        <div class="section-title">Calls</div>
+        <div class="call-card"><div class="avatar">A</div><div><b>Alex</b><small>↙ Today, 11:20 AM</small></div><button class="call">☎</button></div>
+        <div class="call-card"><div class="avatar">S</div><div><b>Sam</b><small>↗ Yesterday, 8:05 PM</small></div><button class="call">☎</button></div>
+      </section>
+
+      <section id="settings" class="page">
+        <div class="section-title">Settings</div>
+        <div class="profile"><div class="avatar big">U</div><div><b>Your Profile</b><small>Hey there! I'm using ChatWave.</small></div></div>
+        <button class="setting">Account <span>›</span></button>
+        <button class="setting">Privacy <span>›</span></button>
+        <button class="setting">Notifications <span>›</span></button>
+        <button class="setting" id="themeBtn">Theme <span>Dark / Light</span></button>
+      </section>
+    </main>
+
+    <nav class="bottom">
+      <button class="tab active" data-page="chats">💬<span>Chats</span></button>
+      <button class="tab" data-page="status">◉<span>Status</span></button>
+      <button class="tab" data-page="calls">☎<span>Calls</span></button>
+      <button class="tab" data-page="settings">⚙<span>Settings</span></button>
+    </nav>
+  </div>
+
+  <div id="chatModal" class="modal hidden">
+    <div class="chat-header"><button id="backBtn">‹</button><div class="avatar" id="modalAvatar">A</div><b id="modalName">Alex</b><span></span><button>☎</button><button>⋮</button></div>
+    <div id="messages" class="messages"></div>
+    <form id="sendForm" class="composer"><input id="messageInput" autocomplete="off" placeholder="Type a message..."><button>➤</button></form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
